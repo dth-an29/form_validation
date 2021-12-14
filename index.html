@@ -44,6 +44,16 @@
         </form>
     </div>
 
-    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/validator.js"></script>
+
+    <script>
+        Validator({
+            form: '#form-1',
+            rules: [
+                Validator.isRequired('#fullname'),
+                Validator.isEmail('#email'),
+            ]
+        });
+    </script>
 </body>
 </html>

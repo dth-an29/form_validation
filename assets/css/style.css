@@ -74,12 +74,15 @@ html {
 }
 
 .form-control:hover {
-    border-color: #f18e8e;
+    border-color: #e46666;
 }
 
-.form-group.invalid .form-control,
-.form-group.invalid .form-message {
+.form-group.invalid .form-control {
     border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+    color: #f31111;
 }
 
 .form-message {
@@ -91,14 +94,14 @@ html {
 .form-submit {
     outline: none;
     background-color: #f16060;
-    margin-top: 12px;
-    padding: 12px 16px;
+    margin-top: 1.2rem;
+    padding: 1.2rem 1.6rem;
     font-weight: 600;
     color: #fff;
     border: none;
     width: 100%;
-    font-size: 14px;
-    border-radius: 8px;
+    font-size: 1.4rem;
+    border-radius: .8rem;
     cursor: pointer;
 }
   
