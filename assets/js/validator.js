@@ -62,3 +62,21 @@ Validator.isEmail = function (selector) {
         }
     };
 }
+
+Validator.minLength = function (selector, min) {
+    return {
+        selector: selector,
+        test: function (value) {
+            return value.length >= min ? undefined : `Vui lòng nhập ít nhất ${min} kí tự`;
+        }
+    };
+}
+
+Validator.isConfirmed = function (selector, getConfirmValue) {
+    return {
+        selector: selector,
+        test: function (value) {
+            return value === getConfirmValue() ? undefined : 'Giá trị nhập vào không chính xác'
+        }
+    }
+}
