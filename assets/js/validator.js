@@ -4,7 +4,7 @@ function Validator(options) {
     // Hàm thực hiện validate
     function validate(inputElement, rule) {
         var errorMessage = rule.test(inputElement.value);
-        var errorElement = inputElement.parentElement.querySelector('.form-message');
+        var errorElement = inputElement.parentElement.querySelector(options.errorSelector);
                     
         if (errorMessage) {
             errorElement.innerText = errorMessage;
@@ -23,8 +23,16 @@ function Validator(options) {
             var inputElement = formElement.querySelector(rule.selector);
 
             if (inputElement) {
+                // Xử lý trường hợp blur khỏi input
                 inputElement.onblur = () => {
                     validate(inputElement, rule);
+                }
+
+                // Xử lý mỗi khi người dùng nhập vào input
+                inputElement.oninput = () => {
+                    var errorElement = inputElement.parentElement.querySelector(options.errorSelector);
+                    errorElement.innerText = '';
+                    inputElement.parentElement.classList.remove('invalid')
                 }
             }
         });
@@ -49,7 +57,8 @@ Validator.isEmail = function (selector) {
     return {
         selector: selector,
         test: function (value) {
-
+            var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            return regex.test(value) ? undefined : 'Trường này phải là email'
         }
     };
 }
