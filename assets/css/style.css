@@ -22,7 +22,11 @@ html {
     min-height: 100px;
     padding: 3.2rem 2.4rem;
     text-align: center;
-    background: #fff;
+    background: linear-gradient(
+            to right bottom,
+            rgba(255, 255, 255, 0.7), 
+            rgba(255, 255, 255, 0.3)
+            );
     border-radius: 1rem;
     margin: 2.4rem;
     align-self: center;
