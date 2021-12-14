@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    color: #333;
+    font-size: 62.5%;
+    font-family: "Open Sans", sans-serif;
+}
+
+.main {
+    background: linear-gradient(to right bottom, #ee7878, #f1bbcd);;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    width: 360px;
+    min-height: 100px;
+    padding: 3.2rem 2.4rem;
+    text-align: center;
+    background: #fff;
+    border-radius: 1rem;
+    margin: 2.4rem;
+    align-self: center;
+    box-shadow: 0 2px 4px 0 rgba(51, 62, 73, 0.1);
+}
+
+.form .heading {
+    font-size: 2.4rem;
+}
+
+.form .desc {
+    font-size: 1.6rem;
+    font-weight: lighter;
+    text-align: center;
+    color: #636d77;
+    line-height: 2.4rem;
+    margin-top: 1.6rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.6rem;
+}
+
+.form-label,
+.form-message {
+    text-align: left;
+}
+
+.form-label {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.8rem;
+    padding-bottom: .6rem;
+}
+
+.form-control {
+    height: 4rem;
+    padding: .8rem 1.2rem;
+    border: 1px solid #b3b3b3;
+    border-radius: .4rem;
+    outline: none;
+    font-size: 1.4rem;
+}
+
+.form-control:hover {
+    border-color: #f18e8e;
+}
+
+.form-group.invalid .form-control,
+.form-group.invalid .form-message {
+    border-color: #f33a58;
+}
+
+.form-message {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding: .4rem 0 0;
+}
+
+.form-submit {
+    outline: none;
+    background-color: #f16060;
+    margin-top: 12px;
+    padding: 12px 16px;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+  
+.form-submit:hover {
+    background-color: #f57373;
+}
+
+.spacer {
+    margin-top: 3.6rem;
+}
