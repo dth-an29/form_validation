@@ -52,6 +52,17 @@ html {
     margin-bottom: 1.6rem;
 }
 
+.form-group .gender {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+.form-group .form-radio {
+    font-size: 1.4rem;
+    padding: .2rem 1.6rem;
+}
+
 .form-label,
 .form-message {
     text-align: left;

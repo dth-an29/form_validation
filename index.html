@@ -23,6 +23,22 @@
             </div>
 
             <div class="form-group">
+                <label for="gender" class="form-label">Giới tính</label>
+                <div class="gender">
+                    <div class="form-radio">
+                        <input type="checkbox" value="male" name="gender" class="form-radio-item"> Nam
+                    </div>
+                    <div class="form-radio">
+                        <input type="checkbox" value="female" name="gender" class="form-radio-item"> Nữ
+                    </div>
+                    <div class="form-radio">
+                        <input type="checkbox" value="other" name="gender" class="form-radio-item"> Khác
+                    </div>
+                </div>
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
                 <label for="email" class="form-label">Email</label>
                 <input type="text" name="email" id="email" class="form-control" placeholder="VD: email@domain.com">
                 <span class="form-message"></span>
@@ -49,16 +65,18 @@
     <script>
         Validator({
             form: '#form-1',
+            formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [
-                Validator.isRequired('#fullname'),
-                Validator.isRequired('#email'),
-                Validator.isEmail('#email'),
-                Validator.minLength('#password', 6),
-                Validator.isRequired('#password_confirmation'),
-                Validator.isConfirmed('#password_confirmation', function () { 
-                    return document.querySelector('#form-1 #password').value;
-                }, 'Mật khẩu nhập lại không chính xác'),
+                // Validator.isRequired('#fullname'),
+                Validator.isRequired('input[name="gender"]'),
+                // Validator.isRequired('#email'),
+                // Validator.isEmail('#email'),
+                // Validator.minLength('#password', 6),
+                // Validator.isRequired('#password_confirmation'),
+                // Validator.isConfirmed('#password_confirmation', function () { 
+                //     return document.querySelector('#form-1 #password').value;
+                // }, 'Mật khẩu nhập lại không chính xác'),
             ],
             onSubmit: function (data) {
                 // Call API
